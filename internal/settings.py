@@ -1,7 +1,8 @@
 """
 это все переменные которые не изменяются
 """
-WIGTH, HEIGHT=1000,700
+
+WIGTH, HEIGHT = 1000, 700
 FPS = 60
 HERO_GRAVITY = True
 TILE = 100
@@ -9,7 +10,7 @@ Z_GRAVITY = True
 GRAVITY_SREED = 10
 MAP_SCALE = 2
 MAP_TILE = TILE // MAP_SCALE
-MAP_POS = (150,200)
+MAP_POS = (150, 200)
 FIRE = False
 TV_EVENT = False
 

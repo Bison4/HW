@@ -3,7 +3,6 @@
 """
 
 from GameSprite import GSprite
-from settings import *
 
 
 class Ground(GSprite):
@@ -14,7 +13,7 @@ class Ground(GSprite):
         super().__init__(image_path, pos_x, pos_y, speed, size_x, size_y)
         self.gravity = True
 
-    def collide(self,enemy):
+    def collide(self, enemy):
         """
         проверяем касание земли и гг , гравитация для гг
         """
@@ -22,5 +21,3 @@ class Ground(GSprite):
             enemy.gravity = False
         else:
             enemy.gravity = True
-
-
