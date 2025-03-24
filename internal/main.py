@@ -1,8 +1,9 @@
+"""
+здесь я запускаю игру
+"""
 import pygame
-
 from ground import Ground
 from helper import resource_path
-
 from player import Hero
 from settings import *
 
