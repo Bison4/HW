@@ -1,0 +1,25 @@
+"""
+это все переменные которые не изменяются
+"""
+
+WIGTH, HEIGHT = 1000, 700
+FPS = 60
+HERO_GRAVITY = True
+TILE = 100
+Z_GRAVITY = True
+GRAVITY_SREED = 10
+MAP_SCALE = 2
+MAP_TILE = TILE // MAP_SCALE
+MAP_POS = (150, 200)
+FIRE = False
+TV_EVENT = False
+
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (220, 0, 0)
+GREEN = (0, 80, 0)
+BLUE = (0, 0, 255)
+DARKGRAY = (40, 40, 40)
+PURPLE = (120, 0, 120)
+SKYBLUE = (0, 186, 255)
+YELLOW = (220, 220, 0)
