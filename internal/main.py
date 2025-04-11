@@ -13,7 +13,14 @@ from settings import (
     MAP_SCALE,
     WIGTH,
 )
-
+def game_bar():
+    size_x = hero.helth
+    pygame.draw.rect(screen, (0, hero.COLOR, 0), (10, 10, size_x, 20))
+    if size_x <= 5:
+        exit()
+    if hero.helth < 200:
+        hero.helth += 0.1
+        hero.COLOR += 0.1
 screen = pygame.display.set_mode((WIGTH, HEIGHT), pygame.RESIZABLE)
 sc_map = pygame.Surface((WIGTH // MAP_SCALE, HEIGHT // MAP_SCALE))
 
@@ -39,31 +46,11 @@ grounds = Ground(
 )
 
 
-def collise_Z(enemy, bullet):
-    if bullet.rect.colliderect(enemy.rect):
-        enemy.rect.x = 0
-        enemy.rect.y = 0
-
-
-bullet_group = pygame.sprite.Group()
-zombie_group = pygame.sprite.Group()
-blood_group = pygame.sprite.Group()
-corpse_group = pygame.sprite.Group()
-
-zombie_event = pygame.USEREVENT + 2
-pygame.time.set_timer(zombie_event, 2000)
 
 player_center = [200, 200]
 
 
-def game_bar():
-    size_x = hero.helth
-    pygame.draw.rect(screen, (0, hero.COLOR, 0), (10, 10, size_x, 20))
-    if size_x <= 5:
-        exit()
-    if hero.helth < 200:
-        hero.helth += 0.1
-        hero.COLOR += 0.1
+
 
 
 running = True
@@ -93,13 +80,7 @@ while running:
     hero.shot_anim_right()
     hero.shot_anim_left()
 
-    bullet_group.draw(screen)
-    bullet_group.update()
 
-    blood_group.draw(screen)
-    corpse_group.draw(screen)
-    zombie_group.draw(screen)
-    zombie_group.update()
     FIRE = False
     pygame.display.flip()
     clock.tick(FPS)
